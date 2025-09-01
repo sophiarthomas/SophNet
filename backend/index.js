@@ -23,31 +23,21 @@ mongoose.connect(process.env.MONGODB_URI)
 .catch(err => console.error("MongoDB connection error:", err));
 
 
-app.post('/', (req, res) => {
-  res.send('Got a POST request')
-})
-app.get('/user', (req, res) => {
-  res.json({
-    name: 'Sophia Thomas', 
-    first_name: 'Sophia',
-    last_name: 'Thomas'
-  })
-})
-app.put('/user', (req, res) => {
-  res.send('Got a PUT request at /user')
-})
-
 /**
  * Sub-routers for our main router, we should have one sub-router per "entity" in the application
  */
 
 // Root URL
 app.get("/", (req, res) => {
-  res.json({ 
+  res.send({ 
     message: "Hello from backend!",
-    message2:"xoxoxoxoxoxo "
+    message2:"Howdy ya'll my name is Sophia Thomas and I am a recent computer science graduate looking to a find SWE infrastrucutre role. Ever since hight school I have been interested in the rapid growth of tech and I decided I wanted to be apart of the development!  "
   }).status(200);
 });
+
+const userRouter = require('./routes/user')
+app.use('/user', userRouter)
+
 app.listen(PORT, () => {
   console.log(`✅ Server running at http://localhost:${PORT}`);
 });
