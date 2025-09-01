@@ -1,5 +1,10 @@
 # SophNet
 
+## How to Start Server
+
+- Frontend: npm run
+- Backend: node index.js
+
 ## Stack
 
 - Frontend: React (Vite or CRA) with React Router
