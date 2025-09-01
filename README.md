@@ -3,7 +3,7 @@
 ## How to Start Server
 
 - Frontend: npm run
-- Backend: node index.js
+- Backend: npm run dev
 
 ## Stack
 
