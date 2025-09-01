@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     fetch('http://localhost:3000/') // <-- bakcend API URL
       .then(res => res.json())
-      .then(data => setMessage(data.message))
+      .then(data => setMessage(data.message2))
       .catch(err => console.error(err))
   }, []);
 
@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       <div>
-        <h1>Sophia Thomas</h1>
+        <h1 className="body">Sophia Thomas</h1>
         <p>Message from backend: {message}</p>
       </div>
       <div>
