@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import githubProfile from './assets/github.jpg'
 import './App.css'
-import NavBar from './molecules/AppBar';
+import NavBar from './components/NavBar';
+import Hero from './components/Hero'
+import About from './components/About';
+import Projects from './components/Projects';
+import Experience from './components/Experience';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
   const [message, setMessage] = useState("default");
@@ -14,24 +20,20 @@ function App() {
   }, []);
 
   return (
-    <>
-      <NavBar nav={{
-        home: "Home",
-        about: "About Me",
-        experience: "Experience"
-      }} />
-      <div className="flex w-full">
-        <div className="card bg-base-300 rounded-bl-xl grow place-items-start">
-          <a href="https://github.com/sophiarthomas">
+    <div className="min-h-screen w-full border-e-indigo-400 flex flex-col">
+      <NavBar />
+      <main className="flex-1">
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        <Contact />
+      </main>
+      <Footer />
+      {/* <a href="https://github.com/sophiarthomas">
             <img src={githubProfile} className="logo" alt="GitHub Profile" />
-          </a>
-        </div>
-        <div className="card grid h-30 grow place-items-end">
-          <h1 className="body">Sophia Thomas</h1>
-          <p className="paragraph">{ }</p>
-        </div>
-      </div >
-    </>
+          </a> */}
+    </div >
   )
 }
 export default App
