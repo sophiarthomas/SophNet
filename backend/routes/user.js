@@ -1,4 +1,5 @@
-const express = require("express")
+// import userController from './controllers/UserController'
+import express from "express";
 const router = express.Router()
 
 router.get('/', (req, res) => {
@@ -7,6 +8,7 @@ router.get('/', (req, res) => {
 
 // Adding a new user 
 router.post('/', (req, res) => {
+  // userController.addNewUser // psuedo code 
 })
 
 router.get('/new', (req, res) => {
@@ -31,4 +33,4 @@ router.route('/:name').get((req, res) => {
 //     req.params.name
 //     res.send(`Get User with ID ${req.params.name}`)})
 
-module.exports = router
+export default router
